@@ -2,7 +2,7 @@
   <app-layout>
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Manage Post Laravel 8 Inertia with Jetstream & Tailwind
+        Laravel 8 Inertia JS CRUD with Jetstream TailwindCSS
       </h2>
     </template>
     <div class="py-12">
@@ -15,7 +15,7 @@
           >
             <div class="flex">
               <div>
-                <p class="text-sm">{{ $page.flash.message }}</p>
+                <p class="text-sm">{{ $page.flash.message }}</p>  
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="row in data" :key="row">
+              <tr v-for="(row, index) in data" :key="index">
                 <td class="border px-4 py-2">{{ row.id }}</td>
                 <td class="border px-4 py-2">{{ row.title }}</td>
                 <td class="border px-4 py-2">{{ row.body }}</td>
@@ -173,7 +173,7 @@ export default {
     AppLayout,
     Welcome,
   },
-  props: ["data", "errors"],
+  props: ["data", "errors","message"],
   data() {
     return {
       editMode: false,
